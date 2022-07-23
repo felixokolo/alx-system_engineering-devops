@@ -7,7 +7,7 @@ do
 	echo Hour: "$hour"
 	while [ "$min" -ne 59 ]
 	do
-		sleep 1
+		sleep 0
 		(( min++ ))
 		echo "$min"
 	done
