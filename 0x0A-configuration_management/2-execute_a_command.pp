@@ -1,4 +1,4 @@
 # kill a service
 exec { 'kill':
-  command  => 'pkill killmenow'
+  command  => '/bin/pkill killmenow'
 }
