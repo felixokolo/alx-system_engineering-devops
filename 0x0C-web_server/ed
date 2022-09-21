@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 # redirecting http request
-red='server {\n\tlisten\t80;\n\trewrite ^/redirect_me$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n}'
-sed -i -e '$a$$red' /etc/nginx/sites-available/default
+red="server {
+\n\t	listen 80;
+\n\t	rewrite ^/redirect_me$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+\n}"
+echo -e $red
