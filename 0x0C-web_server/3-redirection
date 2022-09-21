@@ -3,7 +3,7 @@
 red="server {
 \n\t	listen 80;
 \n\t	rewrite ^/redirect_me$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
-\n}'
+\n}"
 apt-get -y update
 apt-get -y install nginx
 ufw allow 'Nginx HTTP'
