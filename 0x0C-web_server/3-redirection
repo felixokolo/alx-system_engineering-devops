@@ -8,5 +8,5 @@ apt-get -y update
 apt-get -y install nginx
 ufw allow 'Nginx HTTP'
 echo 'Hello World!' > /var/www/html/index.nginx-debian.html
-echo $red >> /etc/nginx/sites-available/default
+sed -e -i $red /etc/nginx/sites-available/default
 service nginx star
