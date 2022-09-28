@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# make ubuntu container run
+string=\
+	"server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	root /usr/share/nginx/html;
+		index index.html index.htm index.nginx-debian.html;
+	# Make site accessible from http://localhost/
+	server_name localhost;
+
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		try_files $uri $uri/ =404;
+	}
+}"
+sudo echo -e "$string" > /etc/nginx/sites-enabled/default
+sudo service nginx restart
