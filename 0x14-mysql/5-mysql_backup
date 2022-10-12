@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#creates a backup for a database
+name=`date +"%d-%m-%Y"`
+filename="$name"
+filename+=".tar.gz"
+sudo mysqldump -u root tyrell_corp > backup.sql -p "$1"
+gzip -c backup.sql "$filename"
+
