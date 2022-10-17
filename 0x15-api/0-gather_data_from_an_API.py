@@ -4,6 +4,7 @@ import json
 import sys
 from urllib import request
 
+"""API request for user todo list"""
 if (len(sys.argv) < 2):
     exit()
 api_url_base = 'https://jsonplaceholder.typicode.com/'
