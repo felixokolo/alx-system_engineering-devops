@@ -10,7 +10,8 @@ if __name__ == '__main__':
         exit()
     api_url_base = 'https://jsonplaceholder.typicode.com/'
     req_url = api_url_base + 'users/' + sys.argv[1]
-    name = json.loads(request.urlopen(req_url).read().decode('utf-8')).get('name')
+    name = json.loads(request.urlopen(req_url).read().
+                      decode('utf-8')).get('name')
     req_url = api_url_base + 'todos?userId=' + sys.argv[1]
     response = request.urlopen(req_url)
     resp = response.read().decode('utf-8')
