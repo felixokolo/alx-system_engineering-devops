@@ -21,10 +21,10 @@ if __name__ == '__main__':
     resp_list = json.loads(resp)
     done_list = [x for x in resp_list if x.get('completed')]
     emp_rec = [[str(uid), str(uname),
-                istr(x.get('completed')).lower(),
+                str(x.get('completed')).lower(),
                 x.get('title')] for x in resp_list]
     with open(str(uid) + '.csv', 'w', newline='') as csvfile:
-        csv_writer = csv.writer(csvfile, delimiter=' ',
+        csv_writer = csv.writer(csvfile, delimiter=',',
                                 quoting=csv.QUOTE_ALL)
         for row in emp_rec:
             csv_writer.writerow(row)
