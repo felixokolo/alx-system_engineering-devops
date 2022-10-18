@@ -21,6 +21,6 @@ if __name__ == '__main__':
     resp_list = json.loads(resp)
     emp_rec = {str(uid): [{'task': x.get('title'),
                            'completed': x.get('completed'),
-                            'username': uname} for x in resp_list]}
+                           'username': uname} for x in resp_list]}
     with open(str(uid) + '.json', 'w') as jsonwriter:
         json.dump(emp_rec, jsonwriter)
