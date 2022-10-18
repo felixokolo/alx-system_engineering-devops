@@ -22,6 +22,6 @@ if __name__ == '__main__':
         emp_rec[str(uid)] = [{'task': x.get('title'),
                               'completed': x.get('completed'),
                               'username': uname}
-                              for x in resp_list if x.get('userId') == uid]
+                             for x in resp_list if x.get('userId') == uid]
     with open('todo_all_employees.json', 'w') as jsonwriter:
         json.dump(emp_rec, jsonwriter)
